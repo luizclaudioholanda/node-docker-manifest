@@ -26,5 +26,13 @@ node {
       }
     }
   }
+
+  stage('Deploying into k8s'){
+    steps{
+      withKubeConfig([credentialsId: 'minikube']) {
+        sh 'kubectl apply -f deployment.yaml'
+      }
+    }
+  }
   
 }
