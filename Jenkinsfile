@@ -21,7 +21,7 @@ node {
           sh "git add ."
 
           sh "git commit -m 'Done Jenkins change job manifest:${env.BUILD_NUMBER}'"
-          sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/node-docker-manifest.git HEAD:main"
+          sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/node-docker-manifest.git HEAD:master"
         }
       }
     }
