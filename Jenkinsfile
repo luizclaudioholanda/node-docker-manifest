@@ -2,12 +2,12 @@ node {
 
   def app
 
-  stage('Clone Repository'){
-
-    checkout scm
-  }
-
   stages {
+    stage('Clone Repository'){
+
+      checkout scm
+    }
+
     stage('Update GIT') {
       script {
         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
