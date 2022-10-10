@@ -16,7 +16,7 @@ spec:
     spec: 
      containers:
       - name: node-docker
-        image: luizholandadocker/node-docker:12
+        image: luizholandadocker/node-docker:13
         ports:
         - containerPort: 8000
 ---
