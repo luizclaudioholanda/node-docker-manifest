@@ -2,7 +2,6 @@ node {
 
   def app
 
-  stages {
     stage('Clone Repository'){
 
       checkout scm
@@ -29,12 +28,11 @@ node {
     }
 
     stage('Deploying into k8s'){
-      script{
+      script {
         withKubeConfig([credentialsId: 'minikube']) {
           sh 'kubectl apply -f deployment.yaml'
         }
       }
     }
-  }
   
 }
