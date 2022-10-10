@@ -29,7 +29,7 @@ node {
     }
 
     stage('Deploying into k8s'){
-      steps{
+      script{
         withKubeConfig([credentialsId: 'minikube']) {
           sh 'kubectl apply -f deployment.yaml'
         }
